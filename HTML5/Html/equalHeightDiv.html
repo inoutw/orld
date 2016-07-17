@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<style>
+	.container{
+		background-color: blue;
+		position: absolute;
+		padding: 20px 20px;
+
+	}
+	.leftDiv{
+		background-color: red;
+		position: relative;
+		bottom: 0px;
+		right:0px;
+		width: 80px;
+		float: left;
+		margin-bottom: 20px;
+
+
+	}
+	.rightDiv{
+		background-color: yellow;
+		position: relative;
+		width: 80px;
+		float: right;
+	}
+	.leftDiv p{
+		postion:relative;
+		bottom:0px;
+	}	
+</style>
+</head>
+<body>
+	<div class="container">
+		<div class="leftDiv"><p>this is left div with less content<p></div>
+		<div class="rightDiv">this is right div with more content. how to keep these two division in the same height without setting the fixed height? let's test the postion attributes of css</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+	the root element font size is rootElFont=16px;
+	<h1>the size of initial h1 is 32px</h1>
+	<h1 style="font-size: 1.2em;">
+		the size of 1.2em h1 is rather rootElFont*1.2 = 19.2px
+		<br>
+		<span style="font-size:1.5em">
+			the font size of 1.5em spann inside 1.2em h1 is rootElFont*1.5 = 24px
+		</span>
+	</h1>
+	<h1 style="font-size: 1.2rem;">the size of 1.2rem h1 is rather rootElFont*1.2 = 19.2px</h1>
+	<h1 style="font-size: 1.2vw;">the size of 1.2vm h1 is window.innerWidth*0.01*1.2</h1>
+	<span style="font-size: 1.5vh" id="vh">the size of 1.5vh is window.innerHeight*0.01*1.5</span>
+	
+
+	
+
+
+	<script type="text/javascript" src="mirror/jquery-1.12.4.js"></script>
+	<script type="text/javascript">
+		console.log('font size of root element (html/body) is ', $('body').css('font-size'));
+		console.log('font size of view width is ', $('window').width());
+
+	</script>
+</body>
+</html>
