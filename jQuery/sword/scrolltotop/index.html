@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+        <meta charset="utf-8">
+        <style>
+            *{
+                margin: 0;
+                padding: 0;
+
+            }
+            /*.box{*/
+                /*width: 900px;*/
+                /*margin: 0 auto;*/
+            /*}*/
+            .gotop{
+                width: 40px;
+                height: 50px;
+                position: fixed;
+                background-color: #8c8c8c;
+                bottom: 10px;
+                right:100px;
+
+            }
+            .gotop:hover {
+                background-color: #4cae4c;
+                cursor: pointer;
+            }
+
+        </style>
+
+
+    </head>
+	<body>
+		<h3>Scroll to top function</h3>
+		<div class="box">
+            <img src="screencapture.png" alt="help img">
+		</div>
+        <button class="gotop" id="gotop" style="display: none;">go top</button>
+		<script type="text/javascript" src="../scabbard/jquery-1.12.4.js"></script>
+        <script type="text/javascript" src="gotop.js"></script>
+	</body>
+</html>
