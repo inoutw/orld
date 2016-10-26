@@ -4,6 +4,8 @@
 import React, {Component} from 'react';
 import {View, StyleSheet, Text, TouchableHighlight, TextInput, Modal} from 'react-native';
 
+
+var textItems = {};
 export default class Footer extends Component{
     constructor(props) {
         super(props);
@@ -11,12 +13,38 @@ export default class Footer extends Component{
             animationType: 'slide',
             modalVisible: false,
             transparent: true,
+            task:[],
         };
     }
 
     _setModalVisible(visible) {
         this.setState({modalVisible: visible});
     }
+
+    _updateText(text, index){
+        textItems[index] = text;
+    }
+
+    _addTask(){
+        this.state.task.push({
+            "priority": 1,
+            "desc": textItems['taskDesc'],
+            "timestamp": 5,
+            "subtask":[{
+                "desc": textItems['subtaskDesc1'],
+                "timestamp": 2
+            }, {
+                "desc": textItems['subtaskDesc2'],
+                "timestamp": 2
+            }, {
+                "desc": textItems['subtaskDesc3'],
+                "timestamp": 1
+            }]
+        });
+        console.log('added task is ',this.state.task);
+        this._setModalVisible(false);
+    }
+
     render(){
         var modalBg = {
             backgroundColor: this.state.transparent ? 'rgba(0, 0, 0, 0.5)' : '#f5fcff',
@@ -34,23 +62,36 @@ export default class Footer extends Component{
                             <View style = {footerStyle.addTaskWrap}>
                                 <Text style = {footerStyle.labelLeft}>Task: </Text>
                                 <View style = {footerStyle.inputTaskLabelWrap}>
-                                    <TextInput multiline={true} style={footerStyle.inputTask}/>
-                                    <Text style = {footerStyle.labelTaskTime}> x5</Text>
+                                    <TextInput
+                                        multiline={true}
+                                        style={footerStyle.inputTask}
+                                        onEndEditing={(event)=>{this._updateText(event.nativeEvent.text, 'taskDesc')}}
+                                    />
+                                    <Text style={footerStyle.labelTaskTime}> x5</Text>
                                 </View>
                             </View>
                             <View style = {footerStyle.subTaskWrap}>
                                 <Text style = {footerStyle.labelLeft}>Taskslice: </Text>
                                 <View style = {footerStyle.subInputWrap}>
                                     <View style={footerStyle.inputSubTaskLabelWrap}>
-                                        <TextInput style={footerStyle.inputSubTask}/>
+                                        <TextInput
+                                            style={footerStyle.inputSubTask}
+                                            onEndEditing = {(event)=>this._updateText(event.nativeEvent.text, 'subtaskDesc1')}
+                                        />
                                         <Text> x2</Text>
                                     </View>
                                     <View style={footerStyle.inputSubTaskLabelWrap}>
-                                        <TextInput style={footerStyle.inputSubTask}/>
+                                        <TextInput
+                                            style={footerStyle.inputSubTask}
+                                            onEndEditing = {(event)=>this._updateText(event.nativeEvent.text, 'subtaskDesc2')}
+                                        />
                                         <Text> x2</Text>
                                     </View>
                                     <View style={footerStyle.inputSubTaskLabelWrap}>
-                                        <TextInput style={footerStyle.inputSubTask}/>
+                                        <TextInput
+                                            style={footerStyle.inputSubTask}
+                                            onEndEditing = {(event)=>this._updateText(event.nativeEvent.text, 'subtaskDesc3')}
+                                        />
                                         <Text> x1</Text>
                                     </View>
                                 </View>
@@ -80,7 +121,7 @@ export default class Footer extends Component{
                                                     style = {footerStyle.btnCancel}>
                                     <Text>取消</Text>
                                 </TouchableHighlight>
-                                <TouchableHighlight style = {footerStyle.btnSave}>
+                                <TouchableHighlight style = {footerStyle.btnSave} onPress = {()=>{this._addTask(); this._setModalVisible.bind(this, false)}}>
                                     <Text style = {footerStyle.textSave}>保存</Text>
                                 </TouchableHighlight>
                             </View>

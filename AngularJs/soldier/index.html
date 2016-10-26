@@ -20,7 +20,7 @@
         <!--tasks are relative to the $scope.tasks-->
         <li ng-repeat="item in tasks track by $index" class="list-group-item">
             {{item}}
-            <a ng-click="tasks.splice($index, 1)">删除</a>
+            <a ng-click="tasks.splice($index, 22, 33, 44)">删除</a>
         </li>
     </ul>
 

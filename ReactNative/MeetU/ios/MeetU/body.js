@@ -2,7 +2,10 @@
  * Created by qinai on 8/22/16.
  */
 import React, {Component} from 'react';
-import {View, Text, StyleSheet, ListView, TouchableHighlight, Image, ScrollView} from 'react-native';
+import {View, Text, StyleSheet, ListView, TouchableHighlight, Image, ScrollView, } from 'react-native';
+
+import ToolTip from 'react-native-tooltip';
+import Footer from './footer';
 
 var taskArr = {
     "task": [{
@@ -50,6 +53,7 @@ export default class Body extends Component {
     constructor(props) {
         super(props);
         var ds = new ListView.DataSource({rowHasChanged: (r1, r2)=>r1 !== r2});
+        console.log('footer data is ', Footer);
         this.state = {
             dataSource: ds.cloneWithRows(taskArr.task),
         };
@@ -67,8 +71,6 @@ export default class Body extends Component {
     }
     _renderRow(rowData) {
         var srcStr = priorIconMap[rowData.priority];
-        console.log('pathe is ', srcStr);
-        var paperClipSrc = rowData.priority? srcStr :null;
         var stampCount = rowData.timestamp, taskStamp = '';
         for(var i=0; i< stampCount; i++){
             taskStamp += '';
@@ -85,7 +87,17 @@ export default class Body extends Component {
 
         return (
             <View style = {bodyStyle.rowWrap}>
-                <Image source = {srcStr} style = {bodyStyle.editIcon}/>
+                <ToolTip
+                    ref='theToolTip'
+                    actions={[
+                      {text: '删除', onPress: () => { console.log('delete is pressed') }},
+                    ]}
+                    underlayColor='transparent'
+                    arrowDirection='right'
+                    style = {bodyStyle.tooltip}
+                >
+                    <Image source = {srcStr} style = {bodyStyle.editIcon}/>
+                </ToolTip>
                 <View style={bodyStyle.rowCenter}>
                     <Text style={bodyStyle.rowText}>{rowData.desc}</Text>
                 </View>
@@ -115,24 +127,23 @@ export default class Body extends Component {
                     </View>
                 );
             }
-        }
-
-
-        var subresult = <View
-            key={`${sectionID}-${rowID}`}
-            style={{
+            var subresult = <View
+                key={`${sectionID}-${rowID}`}
+                style={{
                   height: adjacentRowHighlighted ? 28 : 84,
                   flexDirection: 'row',
                   borderBottomWidth: 1,
                   borderBottomColor: '#ccc',
                 }}
-        >
-            <Text style = {bodyStyle.editIcon}></Text>
-            <ScrollView>
-                {subdesc}
-            </ScrollView>
-        </View>
-        return subresult;
+            >
+                <Text style = {bodyStyle.editIcon}></Text>
+                <ScrollView>
+                    {subdesc}
+                </ScrollView>
+            </View>
+            return subresult;
+        }
+        return null;
     }
 }
 
