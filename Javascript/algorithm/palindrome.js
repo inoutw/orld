@@ -1,6 +1,6 @@
 /**
  * Created by qinai on 11/10/16.
- * function: check if a string is palindrome
+ * desc: check if a string is palindrome
  * extend: get the longest palindromic substring in a string
  */
 
