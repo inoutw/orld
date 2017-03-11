@@ -7,4 +7,12 @@ for (var i = 0; i < lis.length; i++) {
         }
     })(i)
 }
-;
+
+function fn(n){
+    lis[n].onclick = function(){
+        alert(n)
+    }
+}
+for(var i=0;i<lis.length;i++){
+    fn(i)
+}

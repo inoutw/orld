@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <title>scrollImg</title>
+    <style>
+    *{
+        margin:0px;
+        padding:0px;
+    }
+    .container{
+        margin:30px auto;
+        width:960px;
+        height: 120px;
+        border: 1px solid black;
+        position:relative;
+        overflow:hidden;
+    }
+    .leftControl{
+        width:30px;
+        height:118px;
+        float:left;
+        display:inline;
+    }
+    .leftControl img{
+        margin:48px 3px 48px 3px;
+        width:24px;
+        height:24px;
+    }
+    .imgContain{
+        width:898px;
+        height:100px;
+        margin:8px 0px 5px 0px;
+        border: 1px solid black;
+        float:left;
+        display:inline;
+    }
+    .imgContain ul{
+        list-style: none;
+    }
+    .imgIn{
+        width:80px;
+        height:80px;
+    }
+    li{
+        position:relative;
+        float:left;
+        width:80px;
+        height:80px;
+        background-color: #cccccc;
+        margin:10px 0px 10px 29px;
+        text-align: center;
+        line-height: 80px;
+    }
+    .rightControl{
+        width:30px;
+        height:118px;
+        float:left;
+        display:inline;
+
+    }
+    #rightA{
+        cursor:default;
+    }
+    .rightControl img{
+        margin:48px 3px 48px 3px;
+        width:24px;
+        height:24px;
+    }
+</style>
+<script>
+    var i=0; var c=8;//显示图片数
+    if(document.addEventListener){
+        document.addEventListener('DOMMouseScroll',mouseWheelHandler,false);
+    }
+    window.onmousewheel=document.onmousewheel=mouseWheelHandler; //IE/Opera/Chrome/Safari
+    function mouseWheelHandler(e) {
+        var direct = 0;
+        e=e || window.event; //ie,opera,chrome
+       if(e.wheelDelta){
+            if(e.wheelDelta==120){ //向上滚动事件
+                after();
+            } else{ //向下滚动事件
+                before();
+            }
+        } //firefox
+        if(e.detail){
+            if(e.detail==-3){ //向上滚动事件
+                after();
+            } else{ //向下滚动实践
+                before();
+            }
+        }
+    }
+    function after(){
+        var lcount=document.getElementsByTagName("ul")[0];
+        var licount=lcount.getElementsByTagName("li");
+        if(i<licount.length-c){
+            licount[i].style.display="none"; i++;
+            document.getElementById("rightA").style.cursor="pointer";
+            if(i==licount.length-c){
+                document.getElementById("leftA").style.cursor="default";
+            }
+        }
+    }
+    function before(){
+        if(i>0){
+            var lcount=document.getElementsByTagName("ul")[0];
+            var licount=lcount.getElementsByTagName("li");
+            licount[i-1].style.display="inline";
+            i--;
+            document.getElementById("leftA").style.cursor="pointer";
+            if(i==0){
+                document.getElementById("rightA").style.cursor="default";
+            }
+        }
+    }
+
+</script>
+
+</head>
+<body>
+<div class="container">
+    <div class="leftControl">
+        <a id="leftA" href="javascript:void(0);" onclick="after()"><img src="img/left.jpg"></a>
+    </div>
+    <div id="main" class="imgContain">
+        <ul>
+            <li><img class="imgIn" src="img/1.jpg"></li>
+            <li><img class="imgIn" src="img/3.jpg"></li>
+            <li><img class="imgIn" src="img/left.jpg"></li>
+            <li><img class="imgIn" src="img/right.jpg"></li>
+            <li><img class="imgIn" src="img/1.jpg"></li>
+            <li><img class="imgIn" src="img/3.jpg"></li>
+            <li><img class="imgIn" src="img/left.jpg"></li>
+            <li><img class="imgIn" src="img/right.jpg"></li>
+            <li>9</li>
+            <li>10</li>
+            <li>11</li>
+            <li>12</li>
+            <li>13</li>
+            <li>14</li>
+            <li>15</li>
+            <li>16</li>
+            <li>17</li>
+            <li>18</li>
+        </ul>
+    </div>
+    <div class="rightControl">
+        <a id="rightA" href="javascript:void(0);" onclick="before()"><img src="img/right.jpg"></a>
+    </div>
+</div>
+</body>
+</html>

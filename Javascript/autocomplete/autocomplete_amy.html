@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+        #input_match{
+            position: relative;
+            top: -10px;
+            left: -37px;
+        }
+        #input_match li{
+            width: 100px;
+            list-style: none;
+        }
+
+    </style>
+</head>
+<body>
+<div>
+    <form action="" id="form_autocomp">
+        <input type="text" class="auto_input" id="auto_input">
+    </form>
+    <ul id="input_match"></ul>
+
+</div>
+<script type="text/javascript">
+    window.onload = function(){
+        var input = document.getElementById('auto_input'),
+            ul = document.getElementById('input_match');
+        var matchArr = ['qingmin@foxmail.com', 'enming@ebay.com', 'enmin@hhh.com', 'enmi@qq.com'];
+        input.onkeyup = function(event){
+            ul.innerHTML= "";
+            var inputVal = input.value, regStr = new RegExp('^'+inputVal)
+            for(var i=0; i< matchArr.length; i++){
+                if(regStr.test(matchArr[i])){
+                    var li = document.createElement('li'), len = inputVal.length;
+                    var boldStr = matchArr[i].substring(0, len);
+                    li.innerHTML = '<strong>'+boldStr+'</strong>'+matchArr[i].substring(len);
+                    ul.appendChild(li);
+                    ul.style.display = "block";
+                }
+            }
+
+            var lis = document.getElementsByTagName('li'), index = 0;
+            //hander mouse event
+            for(var j = 0;j< lis.length; j++){
+                lis[j].onmouseover = (function(j){
+                    return function(){
+                        lis[j].style.backgroundColor = '#eee';
+                    }
+                })(j)
+                lis[j].onmouseout = (function(j){
+                    return function(){
+                        lis[j].style.backgroundColor = '#fff';
+                    }
+                })(j)
+                lis[j].onclick = (function(j){
+                    return function(){
+                        input.value = lis[j].innerText||lis[j].textContent;
+                        ul.style.display = "none";
+                    }
+                })(j)
+            }
+            function updateInput(){
+                lis[index].style.backgroundColor = '#eee';
+                input.value = lis[index].innerText;
+            }
+            //处理上下,enter键
+            if(event.keyCode == 38 && index>0){
+                updateInput();
+                index--;
+            }
+            if(event.keyCode == 40 && index<lis.length){
+                updateInput();
+                index++;
+            }
+            if(event.keyCode == 13){
+                input.value = lis[index].innerText;
+                ul.style.display = "none";
+            }
+
+        }
+
+    }
+</script>
+</body>
+</html>

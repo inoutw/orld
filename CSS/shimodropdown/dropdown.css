@@ -1,0 +1,102 @@
+.new_wrap{
+    text-align: center;
+}
+.new_btn{
+    background:#41464b;
+    border-radius:2px;
+    width:168px;
+    height:56px;
+    cursor: pointer;
+    font-family:PingFangSC-Medium;
+    font-size:24px;
+    color:#ffffff;
+    display: inline-block;
+    line-height: 56px;
+}
+.new_btn:hover{
+    box-shadow:0 4px 12px 0 rgba(0,0,0,0.20);
+}
+.menu_wrap{
+    border:1px solid #dddddd;
+    box-shadow:0 4px 12px 0 rgba(0,0,0,0.10);
+    border-radius:2px;
+    width:248px;
+    padding: 20px 0;
+    font-family:PingFangSC-Regular;
+    font-size:24px;
+    color:#666666;
+    margin: 15px auto;
+    z-index: 99;
+    display: none;
+}
+.item_icon{
+    width: 35px;
+    height: 39px;
+    float: left;
+}
+.item_icon_doc{
+    background-image: url("icons/docs@2x.png");
+}
+.item_icon_chart{
+    background-image: url("icons/chart@2x.png");
+}
+.item_icon_folder{
+    background-image: url("icons/folder@2x.png");
+}
+.item_icon_upload{
+    background-image: url("icons/upload@2x.png");
+}
+.item_text{
+    line-height: 40px;
+    float: left;
+    margin-left: 28px;
+
+}
+.menu_item span{
+    display: inline-block;
+}
+.menu_item{
+    height:40px;
+    padding-left: 38px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    cursor: pointer;
+}
+.menu_item:hover{
+    background:#f5f5f5;
+}
+.menu_divider{
+    display: block;
+    height: 0;
+    margin: 5px 31px;
+    border-bottom: 1px solid #ddd;
+}
+.arrow{
+    border-width: 16px;
+    position: absolute;
+    display: block;
+    border-bottom-color: #ddd;
+    border-top-width: 0px;
+    border-right-color: transparent;
+    border-left-color: transparent;
+    border-style: solid;
+    left: 49%;
+    top: 64px;
+
+}
+.arrow:after{
+    border-bottom-color: #fff;
+    content: '';
+    border-width: 15px;
+    border-top-width: 0;
+    position: absolute;
+    display: block;
+    border-right-color: transparent;
+    border-left-color: transparent;
+    border-style: solid;
+    top: 1px;
+    left: -15px;
+}
+.new_wrap.active .menu_wrap{
+    display: block;
+}

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cruise</title>
+    <link rel="stylesheet" href="libs/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="css/cruise.css">
+</head>
+<body>
+    <header class="navbar navbar-static-top">
+        <div class="container">
+            <nav class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>Signed in as<a href="#">Member</a></li>
+                    <li><a href="#"><span class="glyphicon glyphicon-arrow-right"></span>Sign out</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="container">
+        <div class="body">
+            <div class="cruise_title"><h1>Cruise</h1></div>
+            <div class="cruise_tabs">
+
+                <ul class="nav nav-tabs" role="tablist">
+                    <li role="presentation"><a href="#help" aria-controls="home" role="tab" data-toggle="tab">Help</a></li>
+                    <li role="presentation"  class="active"><a href="#agents" aria-controls="profile" role="tab" data-toggle="tab">Agents</a></li>
+                    <li role="presentation"><a href="#my_cruise" aria-controls="messages" role="tab" data-toggle="tab">My Cruise</a></li>
+                    <li role="presentation"><a href="#dashboard" aria-controls="settings" role="tab" data-toggle="tab">Dashboard</a></li>
+                </ul>
+
+                <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane" id="help">help...</div>
+                    <div role="tabpanel" class="tab-pane active" id="agents">
+                        <div class="col-lg-12 col-xs-12 agents_container">
+                            <div class="row">
+                                <div class="agents_filter">
+                                    <div class="agents_options">
+                                        <span>Agents</span>
+                                        <button type="button">All</button>
+                                        <button type="button" class="agent_active">Physical</button>
+                                        <button type="button">Virtual</button>
+                                    </div>
+                                </div>
+                                <div class="agents_panel col-lg-12 col-xs-12">
+                                    <div class="col-lg-9 col-sm-9 col-xs-12 agents_left">
+                                        <div class="agent_item idle_item">
+                                            <div class="item_mark col-lg-1 col-md-1 col-xs-1">
+                                                <div class="item_circle"></div>
+                                            </div>
+                                            <div class="item_desc col-lg-10 col-md-10 col-xs-9">
+                                                <div class="">
+                                                    <div class="col-lg-5 col-md-6 col-xs-12">
+                                                        <div class="row"><strong>bjstdmngbgr02.thoughtworks.com</strong></div>
+                                                    </div>
+                                                    <div class="col-lg-6 col-md-6 col-xs-12">
+                                                        <div class="row">| idle | 192.168.1.2 | /var/lib/cruise-agent</div>
+                                                    </div>
+                                                    <div class="col-lg-12 col-md-6 col-xs-12">
+                                                        <div class="row">
+                                                            <a href="javascript:void(0)" class="addRes" id="res1">+ Specify Resources</a> ｜ Resource:
+                                                            <div class="agent_resource" class="agentRes">
+                                                                <span>ubuntu <span class="glyphicon glyphicon-remove-circle"></span></span>
+                                                                <span>firefox3 <span class="glyphicon glyphicon-remove-circle"></span></span>
+                                                                <span>core-duo <span class="glyphicon glyphicon-remove-circle"></span></span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="item_ops col-lg-1 col-md-1 col-xs-2">
+                                                <a href="javascript:void(0)"><span class="glyphicon glyphicon-ban-circle"></span> Deny</a>
+                                            </div>
+                                        </div>
+                                        <div class="agent_item build_item">
+                                            <div class="item_mark col-lg-1 col-md-1 col-xs-1">
+                                                <div class="item_circle"></div>
+                                            </div>
+                                            <div class="item_desc col-lg-10 col-md-10 col-xs-9">
+                                                <div class="">
+                                                    <div class="col-lg-5 col-md-6 col-xs-12">
+                                                        <div class="row"><strong>bjstdmngbgr02.thoughtworks.com</strong></div>
+                                                    </div>
+                                                    <div class="col-lg-6 col-md-6 col-xs-12">
+                                                        <div class="row">| building | 192.168.1.3 | /var/lib/cruise-agent</div>
+                                                    </div>
+                                                    <div class="col-lg-12 col-md-6 col-xs-12">
+                                                        <div class="row">
+                                                            <a href="javascript:void(0)" class="addRes" id="res2">+ Specify Resources</a> ｜ Resource:
+                                                            <div class="agent_resource" class="agentRes">
+                                                                <span>ubuntu <span class="glyphicon glyphicon-remove-circle"></span></span>
+                                                                <span>firefox3 <span class="glyphicon glyphicon-remove-circle"></span></span>
+                                                                <span>core-duo <span class="glyphicon glyphicon-remove-circle"></span></span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="item_ops col-lg-1 col-md-1 col-xs-2">
+                                                <a href="javascript:void(0)"><span class="glyphicon glyphicon-ban-circle"></span> Deny</a>
+                                            </div>
+                                        </div>
+                                        <div class="agent_item build_item">
+                                            <div class="item_mark col-lg-1 col-md-1 col-xs-1">
+                                                <div class="item_circle"></div>
+                                            </div>
+                                            <div class="item_desc col-lg-10 col-md-10 col-xs-9">
+                                                <div class="">
+                                                    <div class="col-lg-5 col-md-6 col-xs-12">
+                                                        <div class="row"><strong>bjstdmngbgr02.thoughtworks.com</strong></div>
+                                                    </div>
+                                                    <div class="col-lg-6 col-md-6 col-xs-12">
+                                                        <div class="row">| building | 192.168.1.4 | /var/lib/cruise-agent</div>
+                                                    </div>
+                                                    <div class="col-lg-12 col-md-6 col-xs-12">
+                                                        <div class="row">
+                                                            <a href="javascript:void(0)" class="addRes" id="res3">+ Specify Resources</a> ｜ Resource:
+                                                            <div class="agent_resource" class="agentRes">
+                                                                <span>ubuntu <span class="glyphicon glyphicon-remove-circle"></span></span>
+                                                                <span>firefox3 <span class="glyphicon glyphicon-remove-circle"></span></span>
+                                                                <span>core-duo <span class="glyphicon glyphicon-remove-circle"></span></span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="item_ops col-lg-1 col-md-1 col-xs-2">
+                                                <a href="javascript:void(0)"><span class="glyphicon glyphicon-ban-circle"></span> Deny</a>
+                                            </div>
+                                        </div>
+                                        <div class="agent_item idle_item">
+                                            <div class="item_mark col-lg-1 col-md-1 col-xs-1">
+                                                <div class="item_circle"></div>
+                                            </div>
+                                            <div class="item_desc col-lg-10 col-md-10 col-xs-9">
+                                                <div class="">
+                                                    <div class="col-lg-5 col-md-6 col-xs-12">
+                                                        <div class="row"><strong>bjstdmngbgr02.thoughtworks.com</strong></div>
+                                                    </div>
+                                                    <div class="col-lg-6 col-md-6 col-xs-12">
+                                                        <div class="row">| idle | 192.168.1.5 | /var/lib/cruise-agent</div>
+                                                    </div>
+                                                    <div class="col-lg-12 col-md-6 col-xs-12">
+                                                        <div class="row">
+                                                            <a href="javascript:void(0)" class="addRes" id="res4">+ Specify Resources</a> ｜ Resource:
+                                                            <div class="agent_resource" class="agentRes">
+                                                                <span>ubuntu <span class="glyphicon glyphicon-remove-circle"></span></span>
+                                                                <span>firefox3 <span class="glyphicon glyphicon-remove-circle"></span></span>
+                                                                <span>core-duo <span class="glyphicon glyphicon-remove-circle"></span></span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="item_ops col-lg-1 col-md-1 col-xs-2">
+                                                <a href="javascript:void(0)"><span class="glyphicon glyphicon-ban-circle"></span> Deny</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="agents_right col-lg-3 col-sm-3 col-xs-12">
+                                        <div class="agent_summary">
+                                            <div class="list_title">Summary</div>
+                                            <div class="list_body">
+                                                <table>
+                                                    <tbody>
+                                                        <tr><td>building</td> <td>2</td></tr>
+                                                        <tr><td>idle</td> <td>2</td></tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                        <div class="agent_history">
+                                            <div class="list_title">History</div>
+                                            <div class="list_body">
+                                                <ul>
+                                                    <li>bjstdmngbgr02/Acceptance_test</li>
+                                                    <li>bjstdmngbgr02/Acceptance_test</li>
+                                                    <li>bjstdmngbgr02/Acceptance_test</li>
+                                                    <li>bjstdmngbgr02/Acceptance_test</li>
+                                                    <li>bjstdmngbgr02/Acceptance_test</li>
+                                                    <li>bjstdmngbgr02/Acceptance_test</li>
+                                                    <li>bjstdmngbgr02/Acceptance_test</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="vertical_line"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="my_cruise">my cruise...</div>
+                    <div role="tabpanel" class="tab-pane" id="dashboard">dashboard...</div>
+                </div>
+                <div class="popover bottom">
+                    <div class="arrow"></div>
+                    <span class="addres_notice">(separate multiple resources names with commas)</span>
+                    <div class="popover-content">
+                        <input id="resource" name="resource"/>
+                    </div>
+                    <div>
+                        <button class="" id="addResBtn">Add resources</button>
+                        <button class="popover_close">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="libs/jquery/jquery-1.12.4.js"></script>
+    <script type="text/javascript" src="libs/bootstrap/js/bootstrap.js"></script>
+    <script type="text/javascript" src="js/cruise.js"></script>
+</body>
+</html>
