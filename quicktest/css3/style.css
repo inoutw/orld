@@ -4,3 +4,14 @@
   background: #ff3bff;
   border-radius: 50px;
 }
+.line hr{
+  color: #ddd;
+  width: 300px;
+  margin-top: 20px;
+}
+.line div{
+  background-color: #f00;
+  height:20px;
+  width:4px;
+  margin-top: 3px;
+}

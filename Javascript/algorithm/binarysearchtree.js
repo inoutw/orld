@@ -7,7 +7,7 @@
 
  树是有节点构成，由根节点逐渐延生到各个子节点，因此它具备基本的结构就是具备一个根节点，具备添加，查找和删除节点的方法.
  */
-//不太明白?
+
 class Node{
     constructor(data, left, right){
         this.data = data;

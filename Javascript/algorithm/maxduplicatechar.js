@@ -11,8 +11,8 @@ function getMaxDuplicateChar(str){
     let charObj = {};
     //把每个字符的重复次数赋给charObj;
     for(let i=0; i<str.length; i++){
-        if(!charObj[str.charAt(i)]){
-            charObj[str.charAt(i)] = 1;
+        if(!charObj[str.charAt(i)]){ //该字符未出现过
+            charObj[str.charAt(i)] = 1; //charObj[a]=1
         }else{
             charObj[str.charAt(i)] +=1;
         }

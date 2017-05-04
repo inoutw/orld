@@ -2,8 +2,41 @@
 <html>
 	<head></head>
 	<body>
-		<h3>Array - shift()</h3>
-		<div>var Array = ［'soldier','','',''］ </div>
+		<h3>Array - shift</h3>
+		<div><pre>
+            var array = ［'Soldier','Monitor','Platoon','Officer'］
+            array.shift()//"Soldier"
+			array//['Monitor','Platoon','Officer']
+            </pre>
+		</div>
+        <h3>Array - splice</h3>
+        <div><pre>
+            var array =['Soldier','Monitor','Platoon','Officer']
+            array.splice(2, 1) // ["Platoon"]
+            array// ["Soldier", "Monitor", "Officer"]
+
+            array.splice(2,0,'Commander') // []
+            array // ["Soldier", "Monitor", "Commander", "Officer"]
+            </pre>
+        </div>
+        <h3>Array - slice(start, end): 从已有的数组中返回选定的元素。</h3>
+        <div><pre>
+            var array =['Soldier','Monitor','Platoon','Officer']
+            array.slice(2, 1)
+            []
+            array
+            ["Soldier", "Monitor", "Platoon", "Officer"]
+            array.slice(2,3)
+            ["Platoon"]
+            array
+            ["Soldier", "Monitor", "Platoon", "Officer"]
+            array.slice(0,3);
+            ["Soldier", "Monitor", "Platoon"]
+            array
+            ["Soldier", "Monitor", "Platoon", "Officer"]
+            </pre>
+        </div>
 		<script type="text/javascript" src="scabbard/jquery-1.12.4.js"></script>
+
 	</body>
 </html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>create circular progressBar by using jQuery</title>
+    <style>
+        .pie {
+            width: 50px;
+            height: 50px;
+            background-color: #D94185;
+            border-radius: 25px;
+            position: absolute;
+        }
+
+        .pie1 {
+            clip: rect(0px, 50px, 50px, 25px);
+            -o-transform: rotate(0deg);
+            -moz-transform: rotate(0deg);
+            -webkit-transform: rotate(0deg);
+            background: -moz-radial-gradient(20% 50% 0deg, #333, #D94185);
+            background: -webkit-gradient(radial, 100 100, 0, 100 100, 110, from(#D94185), to(#D94185));
+        }
+
+        .pie2 {
+            clip: rect(0px, 25px, 50px, 0px);
+            -o-transform: rotate(0deg);
+            -moz-transform: rotate(0deg);
+            -webkit-transform: rotate(0deg);
+            background: -moz-radial-gradient(80% 50% 0deg, #333, #D94185);
+            background: -webkit-gradient(radial, 100 100, 0, 100 100, 110, from(#D94185), to(#D94185));
+        }
+
+        .hold {
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            z-index: 1;
+        }
+
+        .hold1 {
+            clip: rect(0px, 50px, 50px, 25px);
+        }
+
+        .hold2 {
+            clip: rect(0px, 25px, 50px, 0px);
+        }
+
+        .bg {
+            width: 50px;
+            height: 50px;
+            background-color: #E6E9EB;
+            border-radius: 25px;
+            position: absolute;
+            background: -moz-radial-gradient(0% 50% 0deg, #900, #E6E9EB);
+            background: -webkit-gradient(radial, 100 100, 0, 100 100, 110, from(#E6E9EB), to(#E6E9EB));
+        }
+
+        .time {
+            width: 38px;
+            height: 38px;
+            margin: 6px 0 0 6px;
+            background-color: #fff;
+            border-radius: 20px;
+            position: absolute;
+            z-index: 1;
+            text-align: center;
+            line-height: 38px;
+            font-size: 13px;
+            color: #D94185;
+        }
+    </style>
+</head>
+<body>
+<div id="urgent_timer">
+    <div class="hold hold1">
+        <div class="pie pie1"></div>
+    </div>
+    <div class="hold hold2">
+        <div class="pie pie2"></div>
+    </div>
+    <div class="bg"></div>
+    <div class="time"><span></span></div>
+</div>
+
+<script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+<script>
+    var totleTime = 5, degPerSec1 = 0, degPerSec2 = 0, count = 0, timerMM = totleTime - 1, timerSS = 59,
+            totle = (timerMM + 1) * 60, degreePerSec = 360 / totle,
+            rotateD = 180 * (timerMM + 1),
+            timerMM = "0" + timerMM;
+    function showTime() {
+        totle = totle - 1;
+        if (totle == 0) {
+            clearInterval(showTimeInterval);
+            clearInterval(timerStart1);
+            clearInterval(timerStart2);
+            $(".pie2").css("-o-transform", "rotate(" + rotateD + "deg)");
+            $(".pie2").css("-moz-transform", "rotate(" + rotateD + "deg)");
+            $(".pie2").css("-webkit-transform", "rotate(" + rotateD + "deg)");
+        } else {
+            if (timerSS > 0) {
+                timerSS -= 1;
+                if (timerSS < 10) {
+                    timerSS = "0" + timerSS
+                }
+            }
+            if (timerSS == 0 && timerMM > 0) {
+                timerSS = 60;
+                timerMM -= 1;
+                if (timerMM < 10) {
+                    timerMM = "0" + timerMM
+                }
+            }
+        }
+        $(".time span").html(timerMM + ":" + timerSS);
+    }
+    showTimeInterval = setInterval("showTime()", 1000);
+
+    function rotatePie1() {
+        degPerSec1 += degreePerSec;
+        count += 1;
+        if (count == 150) {
+            count = 0;
+            clearInterval(timerStart1);
+            timerStart2 = setInterval("rotatePie2()", 1000);
+        }
+        ;
+        $(".pie1").css("-o-transform", "rotate(" + degPerSec1 + "deg)");
+        $(".pie1").css("-moz-transform", "rotate(" + degPerSec1 + "deg)");
+        $(".pie1").css("-webkit-transform", "rotate(" + degPerSec1 + "deg)");
+    }
+    function rotatePie2() {
+        degPerSec2 += degreePerSec;
+        count += 1;
+        if (count == 150) {
+            count = 0;
+            clearInterval(timerStart2);
+            timerStart1 = setInterval("rotatePie1()", 1000);
+        }
+        $(".pie2").css("-o-transform", "rotate(" + degPerSec2 + "deg)");
+        $(".pie2").css("-moz-transform", "rotate(" + degPerSec2 + "deg)");
+        $(".pie2").css("-webkit-transform", "rotate(" + degPerSec2 + "deg)");
+    }
+    timerStart1 = setInterval("rotatePie1()", 1000);
+</script>
+</body>
+</html>

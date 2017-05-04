@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vertival Align middle</title>
+    <style type="text/css">
+        /*div.outer {
+            display: table-cell;
+            width: 500px;
+            height: 500px;
+            background: gray;
+            vertical-align: middle;
+            text-align: center;
+        }
+        div.inner {
+            display: inline-block;
+            width: 200px;
+            height: 200px;
+            background: red;
+        }*/
+
+        /*div.outer {
+            width: 500px;
+            height: 500px;
+            background: gray;
+            text-align: center;
+            position: relative;
+        }
+        div.inner{
+            width: 200px;
+            height: 200px;
+            background: red;
+            margin: auto;
+            position: absolute;
+            top: 0; left: 0; bottom: 0; right: 0;
+        }*/
+
+        div.outer {
+            width: 500px;
+            height: 500px;
+            background: gray;
+            display: flex;
+            justify-content: center;
+        }
+        div.inner {
+            width: 200px;
+            height: 200px;
+            background: red;
+            align-self: center;
+        }
+
+    </style>
+</head>
+<body>
+<div class="outer">
+    <div class="inner">
+        test
+    </div>
+</div>
+</body>
+</html>
