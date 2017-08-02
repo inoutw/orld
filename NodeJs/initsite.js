@@ -11,7 +11,7 @@ function reqRes(req, res){
         console.log('the method is get');
         switch(req.url){
             case "/":
-            case "/index.html":
+            case "/mysite/index.html":
                 var html = "<html><head><meta charset='UTF-8'>" +
                     "<title>Home</title></head><body>欢迎!<br/>" +
                     "<a href='mysite/add.html'>add</a> " +
@@ -22,22 +22,22 @@ function reqRes(req, res){
                     "</body></html>";
                 res.end(html);
                 break;
-            case "/add.html":
+            case "/mysite/add.html":
                 var addHtml = "<html><head><meta charset='UTF-8'>" +
                     "<title>add</title></head><body>add</body></html>";
                 res.end(addHtml);
                 break;
-            case "/find.html":
+            case "/mysite/find.html":
                 var findHtml = "<html><head><meta charset='UTF-8'>" +
                     "<title>find</title></head><body>find</body></html>";
                 res.end(findHtml);
                 break;
-            case "/edit.html":
+            case "/mysite/edit.html":
                 var editHtml = "<html><head><meta charset='UTF-8'>" +
                     "<title>edit</title></head><body>edit</body></html>";
                 res.end(editHtml);
                 break;
-            case "/remove.html":
+            case "/mysite/remove.html":
                 var removeHtml = "<html><head><meta charset='UTF-8'>" +
                     "<title>remove</title></head><body>remove</body></html>";
                 res.end(removeHtml);

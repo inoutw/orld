@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="text" name="" id="test" value="das" />
+	</body>
+</html>
+<script type="text/javascript">
+	var inputEl = document.getElementById('test');
+	var inputVal = inputEl.value;
+	console.log(inputVal);
+	inputEl.focus();
+	inputEl.setSelectionRange(inputVal.length, inputVal.length)
+</script>
