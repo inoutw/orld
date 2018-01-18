@@ -1,0 +1,41 @@
+.img-wrap {
+	width: 100px;
+	height: 100px;
+	background-image:url(./heart_animation.png);
+	background-position: left;
+	background-repeat: no-repeat;
+	cursor: pointer;
+}
+@-webkit-keyframes heartBlast {
+	0% {
+		background-position: left;
+	}
+	100% {
+		background-position: right;
+	}
+}
+
+@keyframes heartBlast {
+	0% {
+		background-position: left;
+	}
+	100% {
+		background-position: right;
+	}
+}
+.heartAnimation {
+	-webkit-animation-name: heartBlast;
+	animation-name: heartBlast;
+
+	-webkit-animation-duration: .8s;
+	animation-duration: .8s;
+
+	/*动画执行次数*/
+	-webkit-animation-iteration-count: 1;
+	animation-iteration-count: 1;
+	/*阶跃函数steps实现帧动画效果而不是线性的变化*/
+	-webkit-animation-timing-function: steps(28);
+	animation-timing-function: steps(28);
+	
+	background-position: right;
+}
