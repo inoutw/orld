@@ -8,11 +8,29 @@ jest.mock('Button', () => {
 	return mockComponent('Button');
 });
 
-it('button press', () => {
+it('change button color', () => {
 	const comp = renderer.create(
 		<MyButton/>
 	)
 	let tree = comp.toJSON();
+	// console.log('tree props', tree);
 	expect(tree).toMatchSnapshot();
-	console.log('tree props', tree.props);
+
+	// trigger the component method 
+	tree.props.onMouseEnter();
+	tree = comp.toJSON();
+	expect(tree).toMatchSnapshot();
+
+	tree.props.onMouseLeave();
+	tree = comp.toJSON();
+	expect(tree).toMatchSnapshot();	
+})
+
+it('should trigger the onPress handler', () => {
+	let mockPress = jest.fn();
+	const comp = renderer.create(
+		<MyButton onPress={mockPress}/>
+	)
+	comp.toJSON().props.onPress();
+	expect(mockPress).toBeCalled();
 })

@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`handle press on Touchable 1`] = `
+<TouchableWithoutFeedback
+  onPress={[Function]}
+>
+  <View>
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+    >
+      Hello World
+    </Text>
+  </View>
+</TouchableWithoutFeedback>
+`;

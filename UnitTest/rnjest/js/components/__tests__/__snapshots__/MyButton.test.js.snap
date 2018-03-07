@@ -1,10 +1,31 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`button press 1`] = `
+exports[`change button color 1`] = `
 <Button
-  accessibilityLabel="Learn more about this purple button"
-  color="#841584"
-  onPress={undefined}
+  color="blue"
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+  onPress={[Function]}
+  title="submit"
+/>
+`;
+
+exports[`change button color 2`] = `
+<Button
+  color="green"
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+  onPress={[Function]}
+  title="submit"
+/>
+`;
+
+exports[`change button color 3`] = `
+<Button
+  color="blue"
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+  onPress={[Function]}
   title="submit"
 />
 `;
