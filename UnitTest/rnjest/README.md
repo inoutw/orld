@@ -12,3 +12,7 @@ eg：
 });`
 如果不用jest.mock， Button底层渲染成View，无法访问需要的属性。
 
+## 异步测试
+callback -- 
+promise,
+

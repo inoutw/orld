@@ -12,7 +12,7 @@ export default class Touchable extends Component {
 
 	render() {
 		return (
-			<TouchableWithoutFeedback onPress={this.onRowPress.bind(this)}>
+			<TouchableWithoutFeedback onPress={this.onRowPress.bind(this)} testID={'toucha'}>
 				<View>
 					<Text>Hello World</Text>
 				</View>
