@@ -8,5 +8,7 @@ jest.mock('TouchableWithoutFeedback', () => {
 	return mockComponent('TouchableWithoutFeedback');
 });
 it('handle press on Touchable', () => {
-
+	const comp = renderer.create(<Touchable />);
+	let tree = comp.getInstance();
+	tree.onRowPress()
 })
