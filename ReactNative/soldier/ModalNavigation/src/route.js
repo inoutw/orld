@@ -3,6 +3,7 @@ import { TabNavigator, StackNavigator } from 'react-navigation';
 import HomeScreen from './screens/HomeScreen';
 import DetailScreen from './screens/DetailScreen';
 import ModalScreen from './screens/ModalScreen';
+import LearnScreen from './screens/LearnScreen';
 
 const ModalStack = StackNavigator(
 	{
@@ -34,11 +35,13 @@ const MainStack = TabNavigator(
 			screen: HomeScreen,
 		},
 		MyModal: {
-			screen: ModalStack,
+			screen: ModalScreen,
+		},
+		Learn: {
+			screen: LearnScreen,
 		},
 	},
 	{
-		mode: 'modal',
 		initialRouteName: 'Home',
 		navigationOptions: {
 			headerStyle: {
@@ -58,13 +61,16 @@ const RootStack = StackNavigator(
 		Main: {
 			screen: MainStack,
 		},
+		MyModal: {
+			screen: ModalScreen,
+		},
 		Details: {
 			screen: DetailScreen,
 		},
 
 	},
 	{
-		mode: 'card',
+		mode: 'modal',
 		headerMode: 'none',
 		initialRouteName: 'Main',
 		navigationOptions: {
