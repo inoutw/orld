@@ -14,7 +14,7 @@ export default class App extends Component {
 		return (
 			<ScrollView
 				ref={(scrollView) => { this.scrollView = scrollView; }}
-				style={styles.container}
+				contentContainerStyle={styles.container}
 				//pagingEnabled={true}
 				horizontal={true}
 				decelerationRate={0}
@@ -25,7 +25,8 @@ export default class App extends Component {
 					left: 30,
 					bottom: 0,
 					right: 30,
-				}}>
+				}}
+				>
 				<View style={styles.view} />
 				<View style={styles.view2} />
 				<View style={styles.view} />
@@ -37,13 +38,14 @@ export default class App extends Component {
 }
 
 const styles = StyleSheet.create({
-	container: {},
+	container: {
+	},
 	view: {
 		marginTop: 100,
 		backgroundColor: 'blue',
 		width: width - 80,
 		margin: 10,
-		height: 200,
+		height: 500,
 		borderRadius: 10,
 	},
 	view2: {
@@ -51,7 +53,7 @@ const styles = StyleSheet.create({
 		backgroundColor: 'red',
 		width: width - 80,
 		margin: 10,
-		height: 200,
+		height: 500,
 		borderRadius: 10,
 	},
 });
