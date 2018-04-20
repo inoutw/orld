@@ -15,11 +15,11 @@ export default class App extends Component {
 			<ScrollView
 				ref={(scrollView) => { this.scrollView = scrollView; }}
 				contentContainerStyle={styles.container}
-				//pagingEnabled={true}
 				horizontal={true}
 				decelerationRate={0}
 				snapToInterval={width - 60}
 				snapToAlignment={"center"}
+				showsHorizontalScrollIndicator={false}
 				contentInset={{
 					top: 0,
 					left: 30,
