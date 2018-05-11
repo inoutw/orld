@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>css radial gradient</title>
+	<style type="text/css">
+		.back {
+			width: 200px;
+			height: 200px;
+			background-color: #c37a70; 
+		}
+		.back::before{
+			content: '';
+			width: 10px;
+			position: absolute;
+			top: 0;
+			left: 8px;
+			bottom: 0;
+									/*从圆心开始渐变，起始颜色和宽度，终止颜色和宽度*/
+			background: radial-gradient(circle, transparent 10px, #fff 10px );
+			background-size: 20px 20px;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="back"></div>
+</body>
+
+</html>
