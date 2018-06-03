@@ -1,0 +1,23 @@
+<html>
+    <div id="testSubject"></div>
+    <button id="testButton">Go!</button>
+</html>
+<script type="text/javascript" src="../toolcase/jquery-1.12.4.js"></script>
+<script type="text/javascript">
+// 在Ajax请求的callback里使用闭包
+jQuery('#testButton').click(function(){
+    var elem$ = jQuery('#testSubject');
+    elem$.html('Loading...');
+    jQuery.ajax({
+        url: 'test.html',
+        success: function(html) {
+            console.log(elem$, 'we can see elem$, via the closure for this callback');
+            elem$.html(html);
+        },
+        error: function(error) {
+            console.log('error request', error);
+            elem$.html(`${error.status} ${error.statusText}`);
+        }
+    })
+})
+</script>

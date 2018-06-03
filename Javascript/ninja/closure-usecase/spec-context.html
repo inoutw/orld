@@ -1,0 +1,28 @@
+<html>
+    <button id="test">Click Me!</button>
+</html>
+<script type="text/javascript">
+// 给函数绑定一个特定的上下文
+    var button = {
+        clicked: false,
+        click: function() {
+            this.clicked = true;
+            console.log(button.clicked, 'The button has been clicked');
+        }
+    };
+    var elem = document.getElementById('test');
+    // 函数上下文是事件目标元素elem，not button object;
+    // elem.addEventListener('click', button.click, false );
+    // 函数上下文是button对象
+    // button.click();
+
+
+    // 改造
+    // elem.addEventListener('click', button.click.apply(button), false);
+    elem.addEventListener('click', bind(button, 'click'), false);
+    function bind(context, name) {
+        return function() {
+            return context[name].apply(context, arguments);
+        }
+    }
+</script>
