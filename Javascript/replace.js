@@ -10,7 +10,10 @@
 // so this indicates you are going to change the value between src and &.
 var text = 'http://localhost/phpThumb.php?src=http://prop/IMG_large.jpg&w=592&aoe=1&q=100';
 var newSrc = 'www.google.com';
-newText = text.replace(/(src=).*?(&)/,'$1' + newSrc + '$2');
+newText = text.replace(/(src=).*?(&)/, '$1' + newSrc + '$2');
 getSrc = text.match(/src=(.*?)&/);
 
 "13122882223".replace(/^(\d{3})(\d{4})/g, "$1-$2-") //131-2288-2223
+
+// 数字千分位：前向查找(?=)匹配后缀， $&:与 regexp 相匹配的子串
+String(12345678.321).replace(/\d{1,3}(?=(\d{3})+(\.|$))/g, '$&,') // "12,345,678.321"
