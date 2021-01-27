@@ -45,3 +45,8 @@ mockData.reduce((all, item, currIndex) => {
 // {id: 1, subjectTitle: "十月新榜", backColor: "#ffb599"}
 // {id: 2, subjectTitle: "旅游必备", backColor: "#f6ffc7"}
 // {id: 3, subjectTitle: "灵感早读", backColor: "#d5e9fb"}
+
+//数组差集
+export const diffArr = (oldArr, newArr) => {
+  return oldArr.concat(newArr).filter(item => !newArr.includes(item) || !oldArr.includes(item))
+}
