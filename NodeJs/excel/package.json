@@ -1,0 +1,15 @@
+{
+  "name": "excel-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "aiqingmin",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "exceljs": "^4.2.1"
+  }
+}
