@@ -1,5 +1,6 @@
 
 /**
+ * 二分查找
  * @param {number[]} nums
  * @param {number} target
  * @return {number}
