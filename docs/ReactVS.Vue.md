@@ -11,16 +11,12 @@ useTransition获取transition的状态
 Fiber:Js对象
 sibling:
 
-
 Hook: 链表
-
-
 
 Vue.js 是一种开源 JavaScript 前端框架.单页应用程序和用户界面是使用MVVM架构构建的。
 响应式的，也就是基于是数据可变的，通过对每一个属性建立 Watcher 来监听，当属性变化的时候，响应式的更新对应的虚拟 DOM
 Vue3: Composition Api: 编写 Vue 组件的方式, 组件逻辑相关的选项以 API 函数的形式重新设计
 state.username反应状态变量reactive
-
 
 
 React hooks原理：
