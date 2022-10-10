@@ -7,7 +7,6 @@ https://zhuanlan.zhihu.com/p/29025460
 
 
 https://developers.turing.com/welcome?s=outbound
-2022前端必会的面试题（附答案）
 
 https://www.zhihu.com/question/20790576/answer/32602154
 
@@ -47,6 +46,7 @@ Class中Class实例是可以改变的，但是props又是不可改变的，会�
 ----------------------------------------------------
 setTimeout 设置 0 毫秒做啥用？
 把任务放在任务队列的末尾，等待同步任务或者任务队列中的任务执行完后再执行setTimeout中的任务
+requestAnimationFrame: 由系统来决定回调函数的执行时机,保证回调函数在屏幕每一次的刷新间隔中只被执行一次，这样就不会引起丢帧现象，也不会导致动画出现卡顿的问题,节流，节省CPU,页面隐藏就不执行
 ---------------------------------------------------------------------
 突破并发限制 
 -------------------------------------------------------------------
@@ -139,7 +139,7 @@ absolute, CSS动画，
 flex:1
 
 
-0.1+0.3
+0.1+0.2 
 
 apply call bind 
 this
@@ -154,6 +154,13 @@ https://vue3js.cn/interview/JavaScript/debounce_throttle.html#%E4%BB%A3%E7%A0%81
 
 Dom树和渲染树：head，隐藏元素不显示
 原型和原型链
+
+
+
+栈内存，堆内存
+浏览器渲染过程
+
+高阶组件：
 
 
 
